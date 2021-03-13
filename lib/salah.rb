@@ -38,8 +38,7 @@ class Salah
   end
 
   def initialize(key: nil)
-    @client = Salah::HTTP.new
-    @key = key
+    @client = Salah::HTTP.new(key: key)
   end
 
   def today(**options)

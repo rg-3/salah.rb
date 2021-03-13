@@ -7,16 +7,20 @@ class Salah::HTTP
   BadReplyError = Class.new(RuntimeError)
   ServerError   = Class.new(BadReplyError)
 
+  def initialize(key: nil)
+    @key = key
+  end
+
   def today(params)
-    get "/v2/times/today.json", params
+    get "/v2/times/today.json", {key: @key}.merge!(params)
   end
 
   def tomorrow(params)
-    get "/v2/times/tomorrow.json", params
+    get "/v2/times/tomorrow.json", {key: @key}.merge!(params)
   end
 
   def this_week(params)
-    get "/v2/times/this_week.json", params
+    get "/v2/times/this_week.json", {key: @key}.merge!(params)
   end
 
   private
@@ -32,6 +36,7 @@ class Salah::HTTP
   end
 
   def parse_params!(params)
+    params.delete_if{|_, v| v.nil?}
     params[:school] = params[:school].id if params[:school].respond_to?(:id)
     params
   end
