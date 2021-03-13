@@ -3,6 +3,7 @@ class Salah
   require_relative 'salah/http'
   require_relative 'salah/response'
   require_relative 'salah/school'
+  require_relative 'salah/version'
 
   Prayer = Struct.new(:name, :time, :date, :school)
   Date = Struct.new(:iso8601, :hijri, :timestamp)
