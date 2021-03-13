@@ -12,11 +12,11 @@
 
 Salah.rb is a Ruby library that provides an API for retrieving Islamic prayer times.
 The library is implemented by making HTTP requests to the [PrayerTimes.date](https://prayertimes.date) 
-web API in order to obtain the prayer times. The [PrayerTimes.date](https://prayertimes.date) web API 
-is free to use and at the time of writing does not require an API key.
+web API. The [PrayerTimes.date](https://prayertimes.date) web API is free to use and at the time of 
+writing does not require an API key.
 
-It's possible that in the future an API key will be required. If that comes to be you can pass 
-the `key: '...'` option to the methods described in this document.
+It's possible that in the future an API key will be required. If that comes to be you 
+can pass the `key: '...'` option to the methods described in this document.
 
 ## <a id='examples'>Examples</a>
 

@@ -1,8 +1,12 @@
 # CHANGELOG
 
-## NEXT
+## NEXT 
 
-* Nothing yet.
+* Nothing yet
+
+## v0.1.2
+
+* Update gem description
 
 ## v0.1.1
 
