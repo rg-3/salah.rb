@@ -33,7 +33,6 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 
 ```
 [1] pry(main)> Salah.today(city: 'Rabat')
-[1] pry(main)> Salah.today(city: 'Rabat')
 => #<Salah::Response:0x000055ff68295618
  @code="200",
  @prayers=
@@ -222,8 +221,10 @@ Salah.rb is available [as a RubyGem](https://rubygems.org/gems/salah.rb).
 
  ## <a id='thanks'> Thanks </a>
 
- Special thanks to the developers and people at [PrayerTimes.date](https://www.prayertimes.date) 
- for providing the free web API service that powers salah.rb
+Thanks to the developers and people at [PrayerTimes.date](https://www.prayertimes.date) 
+for providing the free web API service that powers salah.rb.
+
+Praise and thanks to The Most Merciful for the inspiration and chance to work on this project. 
 
 ## <a id='license'> LICENSE </a>
 
