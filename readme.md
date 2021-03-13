@@ -193,7 +193,7 @@ from 0 to 12 (excluding 6) or a `Salah::School` object.
     school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>]>
  ```
 
-**3** `Salah::Response`
+**3.** `Salah::Response`
 
 By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`, 
 `Salah.tomorrow`, and `Salah.this_week`. Its most useful property is `Response#prayers`, which
