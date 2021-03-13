@@ -1,8 +1,12 @@
 class Salah::Response
   PRAYER_NAMES = %w(Fajr Dhuhr Asr Maghrib Isha)
   attr_reader :prayers
+  attr_reader :code
+  attr_reader :status
 
-  def initialize(body)
+  def initialize(res, body)
+    @code = res.code
+    @status = body.status
     @prayers = populate_prayers!(body)
   end
 

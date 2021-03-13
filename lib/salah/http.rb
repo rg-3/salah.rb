@@ -29,7 +29,7 @@ class Salah::HTTP
     params   = parse_params!(params)
     response = http.request Net::HTTP::Get.new(join_path(path, params))
     if Net::HTTPOK === response
-      parse_response(response.body, response['content-type'])
+      parse_response(response, response['content-type'])
     else
       raise BadResponseError.new("Bad response from API (#{response.class})", response)
     end
@@ -49,10 +49,10 @@ class Salah::HTTP
     @http ||= Net::HTTP.start(BASE_URI.host, BASE_URI.port, use_ssl: true)
   end
 
-  def parse_response(body, content_type)
+  def parse_response(res, content_type)
     case content_type
     when 'application/json', 'application/json; charset=utf-8'
-      Salah::Response.new OpenStruct.from_hash(JSON.parse(body))
+      Salah::Response.new res, OpenStruct.from_hash(JSON.parse(res.body))
     else
       raise BadContentTypeError.new("The content-type '#{content_type}' is not recognized")
     end

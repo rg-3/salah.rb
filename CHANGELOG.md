@@ -2,7 +2,9 @@
 
 ## Next
 
-* Nothing yet.
+* Add `Salah::Response#code`.
+
+* Add `Salah::Response#status`.
 
 ## v0.4.0
 
