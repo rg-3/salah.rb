@@ -1,6 +1,12 @@
 # CHANGELOG
 
-## NEXT
+## Next
+
+* Nothing yet.
+
+## v0.4.0
+
+* Improve `Salah::HTTP`.
 
 * Add `Salah::HTTP::BadContentTypeError` and raise it when the response
   has an unexpected content type.
