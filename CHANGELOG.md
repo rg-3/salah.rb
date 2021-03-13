@@ -2,7 +2,8 @@
 
 ## NEXT
 
-* Nothing yet.
+* Add `Salah::HTTP::BadContentTypeError` and raise it when the response
+  has an unexpected content type.
 
 ## v0.3.0
 

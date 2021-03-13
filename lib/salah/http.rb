@@ -3,7 +3,9 @@ class Salah::HTTP
   require 'net/http'
   require 'json'
   require_relative 'http/bad_response_error'
+
   BASE_URI = URI.parse('https://api.pray.zone/')
+  BadContentTypeError = Class.new(RuntimeError)
 
   def initialize(key: nil)
     @key = key
@@ -44,10 +46,11 @@ class Salah::HTTP
   end
 
   def parse_response(body, content_type)
-    if content_type.start_with?('application/json')
+    case content_type
+    when 'application/json', 'application/json; charset=utf-8'
       Salah::Response.new OpenStruct.from_hash(JSON.parse(body))
     else
-      body
+      raise BadContentTypeError.new("The content-type '#{content_type}' is not recognized")
     end
   end
 end
