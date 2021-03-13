@@ -22,12 +22,12 @@ the `key: '...'` option to the methods described in this document.
 
 **1.**
 
-You can retrieve the prayer times for today, tomorrow, or next week using the methods
-`Salah.today`, `Salah.tomorrow`, and `Salah.next_week`. You can provide either a city 
+You can retrieve the prayer times for today, tomorrow, or this week using the methods
+`Salah.today`, `Salah.tomorrow`, and `Salah.this_week`. You can provide either a city 
 name, the long/lat coordinates, or an IP address to determine your location.
 
 The examples use `Salah.today` but you could also repeat them with `Salah.tomorrow` and 
-`Salah.next_week`.
+`Salah.this_week`.
 
 **1.1** With a city name
 
@@ -196,7 +196,7 @@ from 0 to 12 (excluding 6) or a `Salah::School` object.
 **3** `Salah::Response`
 
 By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`, 
-`Salah.tomorrow`, and `Salah.next_week`. Its most useful property is `Response#prayers`, which
+`Salah.tomorrow`, and `Salah.this_week`. Its most useful property is `Response#prayers`, which
 returns an array of `Salah::Prayer` objects.
 
 ```ruby
