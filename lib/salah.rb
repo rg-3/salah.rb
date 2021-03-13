@@ -50,6 +50,6 @@ class Salah
   end
 
   def this_week(**options)
-    @client.this_week(**options)
+    @client.this_week(options)
   end
 end
