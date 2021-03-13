@@ -2,7 +2,7 @@
 
 ## NEXT
 
-* Nothing yet.
+* Add `Salah::HTTP::BadResponseError`.
 
 ## v0.2.0
 
@@ -10,11 +10,11 @@
 
 ## v0.1.3
 
-* Update gem description
+* Update gem description.
 
 ## v0.1.2
 
-* Update gem description
+* Update gem description.
 
 ## v0.1.1
 

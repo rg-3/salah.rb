@@ -2,10 +2,8 @@ class Salah::HTTP
   require 'uri'
   require 'net/http'
   require 'json'
-
-  BASE_URI      = URI.parse('https://api.pray.zone/')
-  BadReplyError = Class.new(RuntimeError)
-  ServerError   = Class.new(BadReplyError)
+  require_relative 'http/bad_response_error'
+  BASE_URI = URI.parse('https://api.pray.zone/')
 
   def initialize(key: nil)
     @key = key
@@ -28,10 +26,10 @@ class Salah::HTTP
   def get(path, params)
     params   = parse_params!(params)
     response = http.request Net::HTTP::Get.new(path + '?' + URI.encode_www_form(params))
-    case response
-    when Net::HTTPOK then parse_response(response.body, response['content-type'])
-    when Net::HTTPServerError then ServerError.new("The API responded with a 500 error")
-    else raise BadReplyError.new("The API responded with an unexpected response code: #{response.code}")
+    if Net::HTTPOK === response
+      parse_response(response.body, response['content-type'])
+    else
+      raise BadResponseError.new("Bad response from API (#{response.class})", response)
     end
   end
 
