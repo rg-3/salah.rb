@@ -33,7 +33,9 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 
 ```
 [1] pry(main)> Salah.today(city: 'Rabat')
-=> #<Salah::Response:0x00005605c5a24a10
+[1] pry(main)> Salah.today(city: 'Rabat')
+=> #<Salah::Response:0x000055ff68295618
+ @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
@@ -59,7 +61,8 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
     name="Isha",
     time="19:57",
     date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>]>
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>],
+ @status="OK">
 ```
 
 **1.2** With latitude and longitude coordinates
@@ -67,6 +70,7 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 ```
 [2] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168)
 => #<Salah::Response:0x00005605c5cf1658
+ @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
@@ -92,7 +96,8 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
     name="Isha",
     time="-",
     date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>]>
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>],
+  @status="OK">
 ```
 
 **1.3** With a Dutch IP address
@@ -100,6 +105,7 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 ```
 [9] pry(main)> Salah.today(ip: '31.151.143.105')
 => #<Salah::Response:0x00005605c5f6b208
+ @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
@@ -125,7 +131,8 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
     name="Isha",
     time="20:29",
     date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>]>
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>],
+   @status="OK">
   ```
   
 **2.**
@@ -165,6 +172,7 @@ from 0 to 12 (excluding 6) or a `Salah::School` object.
 ```
 [1] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168, school: Salah::School.find_by_id(7))
 => #<Salah::Response:0x0000557cabf29e50
+ @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
@@ -190,7 +198,8 @@ from 0 to 12 (excluding 6) or a `Salah::School` object.
     name="Isha",
     time="-",
     date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>]>
+    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>],
+  @status="OK">
  ```
 
 **3.** `Salah::Response`
