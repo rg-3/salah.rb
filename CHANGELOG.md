@@ -2,6 +2,12 @@
 
 ## NEXT
 
+* Nothing yet.
+
+## v0.3.0
+
+* Improve `Salah::Response`.
+
 * Add `Salah::HTTP::BadResponseError`.
 
 ## v0.2.0
