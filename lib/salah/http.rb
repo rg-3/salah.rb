@@ -27,7 +27,7 @@ class Salah::HTTP
 
   def get(path, params)
     params   = parse_params!(params)
-    response = http.request Net::HTTP::Get.new(path + '?' + URI.encode_www_form(params))
+    response = http.request Net::HTTP::Get.new(join_path(path, params))
     if Net::HTTPOK === response
       parse_response(response.body, response['content-type'])
     else
@@ -39,6 +39,10 @@ class Salah::HTTP
     params.delete_if{|_, v| v.nil?}
     params[:school] = params[:school].id if params[:school].respond_to?(:id)
     params
+  end
+
+  def join_path(path, params)
+    [path, '?', URI.encode_www_form(params)].join
   end
 
   def http
