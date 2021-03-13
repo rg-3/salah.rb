@@ -10,7 +10,7 @@ class Salah
 
   def self.schools
     @schools ||= [
-      [0, 'Ithna Ashari',	16,	14],
+      [0, 'Ithna Ashari', 16, 14],
       [1, 'University of Islamic Sciences, Karachi', 18, 18],
       [2, 'Islamic Society of North America', 15, 15],
       [3, 'Muslim World League', 18, 17],
