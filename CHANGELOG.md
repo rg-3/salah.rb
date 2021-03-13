@@ -4,6 +4,10 @@
 
 * Nothing yet.
 
+## v0.2.0
+
+* Add `Salah::Prayer#{fajr,dhuhr,asr,maghrib,isha}?` predicates.
+
 ## v0.1.3
 
 * Update gem description
