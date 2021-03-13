@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## Next
+## Next 
+
+* Nothing yet.
+
+## v0.5.0
 
 * Add `Salah::Response#code`.
 
