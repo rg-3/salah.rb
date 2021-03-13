@@ -29,7 +29,7 @@ name, the long/lat coordinates, or an IP address to determine your location.
 The examples use `Salah.today` but you could also repeat them with `Salah.tomorrow` and 
 `Salah.next_week`.
 
-**1.1 With a city name**
+**1.1** With a city name
 
 ```
 [1] pry(main)> Salah.today(city: 'Rabat')
@@ -62,7 +62,7 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
     school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>]>
 ```
 
-**1.2 With latitude and longitude coordinates**
+**1.2** With latitude and longitude coordinates
 
 ```
 [2] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168)
@@ -95,7 +95,7 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
     school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>]>
 ```
 
-**1.3 With a Dutch IP address**
+**1.3** With a Dutch IP address
 
 ```
 [9] pry(main)> Salah.today(ip: '31.151.143.105')
@@ -193,7 +193,7 @@ from 0 to 12 (excluding 6) or a `Salah::School` object.
     school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>]>
  ```
 
-**3** `Salah::Response
+**3** `Salah::Response`
 
 By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`, 
 `Salah.tomorrow`, and `Salah.next_week`. Its most useful property is `Response#prayers`, which
