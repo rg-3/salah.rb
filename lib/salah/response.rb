@@ -3,24 +3,23 @@ class Salah::Response
   attr_reader :prayers
 
   def initialize(body)
-    @prayers = []
-    populate_prayers_field! @prayers, body
+    @prayers = populate_prayers!(body)
   end
 
   private
 
-  def populate_prayers_field!(prayers, body)
+  def populate_prayers!(body)
     prayer_times = body.results.datetime
-    prayer_times.each do |prayer|
-      prayers.concat PRAYER_NAMES.map {|name|
-        date = prayer.date
-        school_name = body.results.settings.school
+    school_name  = body.results.settings.school
+    prayer_times.map do |prayer_time|
+      PRAYER_NAMES.map {|name|
+        date = prayer_time.date
         Salah::Prayer.new(name,
-          prayer.times[name],
+          prayer_time.times[name],
           Salah::Date.new(date.gregorian, date.hijri, date.timestamp),
           Salah::School.find_by_name(school_name) || school_name
         )
       }
-    end
+    end.flatten
   end
 end
