@@ -1,5 +1,5 @@
 $LOAD_PATH << 'lib'
-require 'trip'
+require 'salah/version'
 Gem::Specification.new do |g|
   g.name        = 'salah.rb'
   g.homepage    = 'https://github.com/rg-3/salah.rb#readme'
