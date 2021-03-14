@@ -1,4 +1,4 @@
-class Salah::Prayer < Struct.new(:name, :time, :date, :school)
+class Salah::Prayer < Struct.new(:name, :time, :date, :school, :location)
   def fajr?() name == 'Fajr' end
   def dhuhr?() name == 'Dhuhr' end
   def asr?() name == 'Asr' end

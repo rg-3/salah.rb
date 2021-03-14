@@ -2,6 +2,7 @@ class Salah
   require 'openstruct-from_hash'
   require_relative 'salah/prayer'
   require_relative 'salah/school'
+  require_relative 'salah/location'
   require_relative 'salah/http'
   require_relative 'salah/response'
   require_relative 'salah/version'

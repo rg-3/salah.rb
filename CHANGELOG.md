@@ -2,7 +2,7 @@
 
 ## Next 
 
-* Nothing yet.
+* Add `Prayer::Location`.
 
 ## v0.5.0
 
