@@ -2,7 +2,7 @@
 
 ## Next 
 
-* Add custom `user-agent` when making requests to 
+* Add custom `user-agent` when making requests to the
   [PrayerTimes.date](https:/www.prayertimes.date) API.
 
 * Add `Salah::Prayer#location`, which returns an instance of `Salah::Location`.
