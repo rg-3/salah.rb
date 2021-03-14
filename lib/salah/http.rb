@@ -27,7 +27,7 @@ class Salah::HTTP
 
   def get(path, params)
     params   = parse_params!(params)
-    response = http.request Net::HTTP::Get.new(join_path(path, params))
+    response = http.request Net::HTTP::Get.new(join_path(path, params), default_headers)
     if Net::HTTPOK === response
       parse_response(response, response['content-type'])
     else
@@ -56,5 +56,9 @@ class Salah::HTTP
     else
       raise BadContentTypeError.new("The content-type '#{content_type}' is not recognized")
     end
+  end
+
+  def default_headers
+    {'User-Agent' => "salah.rb v#{Salah::VERSION}"}
   end
 end

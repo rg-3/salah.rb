@@ -7,19 +7,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - salah.rb v0.5.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sun, 14 Mar 2021 09:09:34 GMT
+      - Sun, 14 Mar 2021 20:14:27 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,35 +27,33 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=de96f3220efd628d14dcec66f1150910e1615712974; expires=Tue, 13-Apr-21
-        09:09:34 GMT; path=/; domain=.pray.zone; HttpOnly; SameSite=Lax
+      - __cfduid=d5c34207777b2912229cbf400378ab3151615752867; expires=Tue, 13-Apr-21
+        20:14:27 GMT; path=/; domain=.pray.zone; HttpOnly; SameSite=Lax
       Access-Control-Allow-Origin:
       - "*"
       X-Powered-By:
       - ASP.NET
       Cf-Cache-Status:
-      - HIT
-      Age:
-      - '2667'
+      - EXPIRED
       Cf-Request-Id:
-      - '08d198900700004c5b1aba8000000001'
+      - '08d3f947830000fa48e99ed000000001'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=V7TS3hcxahVzL7Tgud52OsZzlVu8QnHpJYMiJXgJbU0NeluQ%2BtAeIjseS7Kr92wdWG14j%2Fez%2FWDC%2BzRWKMT1bqlptSX58CrV77%2BLO56L"}]}'
+      - '{"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=5JZ3V18Uj7rfQ8h0pxvObZ3giPRD0V9rd0QQ1C0dwAA9h6Vz3QnSN2Uvf7CyhfJTr4mp1%2BhHcJN6g0RCko8p9YQL6jE3DWoQODEjneBp"}]}'
       Nel:
-      - '{"max_age":604800,"report_to":"cf-nel"}'
+      - '{"report_to":"cf-nel","max_age":604800}'
       Vary:
       - Accept-Encoding
       Server:
       - cloudflare
       Cf-Ray:
-      - 62fc5d2cddd54c5b-AMS
+      - 63002b1f3f79fa48-AMS
       Alt-Svc:
       - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: '{"code":200,"status":"OK","results":{"datetime":[{"times":{"Imsak":"05:06","Sunrise":"06:38","Fajr":"05:16","Dhuhr":"12:37","Asr":"16:00","Sunset":"18:36","Maghrib":"18:50","Isha":"19:58","Midnight":"23:56"},"date":{"timestamp":1615680000,"gregorian":"2021-03-14","hijri":"1442-08-01"}}],"location":{"latitude":33.971591949462891,"longitude":-6.8498129844665527,"elevation":49.0,"city":"Rabat","country":"Morocco","country_code":"MA","timezone":"Africa/Casablanca","local_offset":0.0},"settings":{"timeformat":"HH:mm","school":"Ithna
         Ashari","juristic":"Shafii","highlat":"None","fajr_angle":18.0,"isha_angle":18.0}}}'
-  recorded_at: Sun, 14 Mar 2021 09:09:35 GMT
+  recorded_at: Sun, 14 Mar 2021 20:14:27 GMT
 recorded_with: VCR 6.0.0
