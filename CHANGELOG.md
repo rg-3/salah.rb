@@ -5,7 +5,9 @@
 * Add custom `user-agent` when making requests to 
   [PrayerTimes.date](https:/www.prayertimes.date) API.
 
-* Add `Prayer::Location`.
+* Add `Salah::Prayer#location`, which returns an instance of `Salah::Location`.
+
+* Add `Salah::Location`.
 
 ## v0.5.0
 
@@ -24,7 +26,8 @@
 
 * Improve `Salah::Response`.
 
-* Add `Salah::HTTP::BadResponseError`.
+* Add `Salah::HTTP::BadResponseError` and raise it when the response is 
+  anything other than `Net::HTTPOK`.
 
 ## v0.2.0
 
@@ -41,4 +44,5 @@
 ## v0.1.1
 
 * Update `Salah::HTTP#initialize` to accept an API key.
-* Update `Salah::HTTP` to use the API key made available to `#initialize`.
+
+* Update `Salah::HTTP` to make use of the API key provided to `Salah::HTTP#initialize`.
