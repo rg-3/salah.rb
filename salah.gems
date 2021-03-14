@@ -1,1 +1,4 @@
 gem 'openstruct-from_hash.rb'
+gem 'rspec'
+gem 'vcr'
+gem 'webmock'
