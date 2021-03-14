@@ -2,6 +2,9 @@
 
 ## Next 
 
+* Add custom `user-agent` when making requests to 
+  [PrayerTimes.date](https:/www.prayertimes.date) API.
+
 * Add `Prayer::Location`.
 
 ## v0.5.0
