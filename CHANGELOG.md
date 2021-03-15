@@ -2,7 +2,11 @@
 
 ## Next
 
-* Nothing yet.
+* Allow an instance of `Salah::Juristic` to be passed as the `juristic: ` option.
+
+* Add `Salah.juristics`.
+
+* Add `Salah::Juristic`.
 
 ## v0.7.1
 

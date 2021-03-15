@@ -3,11 +3,16 @@ class Salah
   require_relative 'salah/prayer'
   require_relative 'salah/school'
   require_relative 'salah/location'
+  require_relative 'salah/juristic'
   require_relative 'salah/http'
   require_relative 'salah/response'
   require_relative 'salah/version'
 
   Date = Struct.new(:iso8601, :hijri, :timestamp)
+
+  def self.juristics
+    @juristics ||= [[0, 'Shafii'], [1, 'Hanafi']].map{|params| Salah::Juristic.new(*params)}
+  end
 
   def self.schools
     @schools ||= [

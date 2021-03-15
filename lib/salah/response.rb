@@ -16,6 +16,7 @@ class Salah::Response
     prayer_times = body.results&.datetime || []
     school_name  = body.results&.settings&.school
     location     = body.results&.location
+    juristic     = body.results&.settings&.juristic
     prayer_times.map do |prayer_time|
       PRAYER_NAMES.map {|name|
         date = prayer_time.date
@@ -25,7 +26,8 @@ class Salah::Response
           Salah::School.find_by_name(school_name) || school_name,
           Salah::Location.new(location.city, location.country, location.country_code,
                               location.latitude, location.longitude, location.elevation,
-                              location.time_zone, location.local_offset)
+                              location.time_zone, location.local_offset),
+          Salah::Juristic.find_by_name(juristic) || juristic
         )
       }
     end.flatten
