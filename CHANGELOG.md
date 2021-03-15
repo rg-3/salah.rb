@@ -4,6 +4,10 @@
 
 * Nothing yet.
 
+## v0.7.1
+
+* Fix `openstruct-from_hash.rb` dependency.
+
 ## v0.7.0
 
 * Add `Salah::HTTP::NoLocationError` and raise it when location requirements are missing.
