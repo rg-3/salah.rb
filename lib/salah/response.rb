@@ -13,9 +13,9 @@ class Salah::Response
   private
 
   def populate_prayers!(body)
-    prayer_times = body.results.datetime
-    school_name  = body.results.settings.school
-    location     = body.results.location
+    prayer_times = body.results&.datetime || []
+    school_name  = body.results&.settings&.school
+    location     = body.results&.location
     prayer_times.map do |prayer_time|
       PRAYER_NAMES.map {|name|
         date = prayer_time.date
