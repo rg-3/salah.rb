@@ -62,5 +62,26 @@ RSpec.describe Salah do
         response.prayers.each{|prayer| expect(prayer.location.country_code).to eq('SA')}
       end
     end
+
+    describe 'with no city, coordinates or IP' do
+      let(:response) { described_class.today }
+      it 'raises an error' do
+        expect { response }.to raise_error(Salah::HTTP::NoLocationError)
+      end
+    end
+
+    describe 'with latitude but no longitude' do
+      let(:response) { described_class.today latitude: 21.0 }
+      it 'raises an error' do
+        expect { response }.to raise_error(Salah::HTTP::NoLocationError)
+      end
+    end
+
+    describe 'with longitude but no langitude' do
+      let(:response) { described_class.today longitude: 21.0 }
+      it 'raises an error' do
+        expect { response }.to raise_error(Salah::HTTP::NoLocationError)
+      end
+    end
   end
 end

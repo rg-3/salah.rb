@@ -6,6 +6,7 @@ class Salah::HTTP
 
   BASE_URI = URI.parse('https://api.pray.zone/')
   BadContentTypeError = Class.new(RuntimeError)
+  NoLocationError = Class.new(RuntimeError)
 
   def initialize(key: nil)
     @key = key
@@ -38,7 +39,9 @@ class Salah::HTTP
   def parse_params!(params)
     params.delete_if{|_, v| v.nil?}
     params[:school] = params[:school].id if params[:school].respond_to?(:id)
-    params
+    return params if params[:city] || params[:ip]
+    return params if params[:latitude] && params[:longitude]
+    raise NoLocationError.new("Please provide a city, longitude and latitude coordinates or an IP address")
   end
 
   def join_path(path, params)

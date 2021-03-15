@@ -5,8 +5,8 @@ class Salah::Response
   attr_reader :status
 
   def initialize(res, body)
-    @code = res.code
-    @status = body.status
+    @code    = res.code
+    @status  = body.status
     @prayers = populate_prayers!(body)
   end
 
