@@ -2,6 +2,9 @@
 
 ## Next 
 
+* Add `Salah::HTTP::NoLocationError` and raise it when location requirements
+  are missing.
+  
 * Add custom `user-agent` when making requests to the
   [PrayerTimes.date](https:/www.prayertimes.date) API.
 
