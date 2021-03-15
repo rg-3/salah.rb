@@ -18,8 +18,8 @@ DESCRIPTION
   g.licenses    = ['MIT']
   g.files	= `git ls-files`.split($/)
   g.required_ruby_version = '>= 2.0'
-  g.add_runtime_dependency 'openstruct-from_hash.rb'
-  g.add_development_dependency 'rspec'
-  g.add_development_dependency 'vcr'
-  g.add_development_dependency 'webmock'
+  g.add_runtime_dependency 'openstruct-from_hash.rb', '~> 3.0'
+  g.add_development_dependency 'rspec', '~> 3.10'
+  g.add_development_dependency 'vcr', '~> 6.0'
+  g.add_development_dependency 'webmock', '~> 3.12'
 end
