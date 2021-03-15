@@ -184,36 +184,41 @@ from 0 to 12 (excluding 6) or a `Salah::School` object.
 
 
 ```
-[1] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168, school: Salah::School.find_by_id(7))
-=> #<Salah::Response:0x0000557cabf29e50
+[4] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168, school: Salah::School.find_by_id(7))
+=> #<Salah::Response:0x000055793ab83158
  @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
-    time="05:17",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>,
+    time="05:16",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Dhuhr",
     time="12:30",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>,
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Asr",
     time="15:54",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>,
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Maghrib",
-    time="18:45",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>,
+    time="18:46",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Isha",
     time="-",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>>],
-  @status="OK">
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=7, name="Institute of Geophysics, University of Tehran", fajr_angle=17.7, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>],
+ @status="OK">
  ```
 
 **3.** `Salah::Response`
