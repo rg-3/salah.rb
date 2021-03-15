@@ -13,11 +13,11 @@ RSpec.describe Salah do
       around {|ex| VCR.use_cassette('Salah.Today.Rabat') { ex.run } }
       include_examples 'Salah.today expectations'
 
-      it 'includes a city with each prayer' do
+      it 'includes a city name with each prayer' do
         response.prayers.each {|prayer| expect(prayer.location.city).to eq('Rabat') }
       end
 
-      it 'includes a country with each prayer' do
+      it 'includes a country name with each prayer' do
         response.prayers.each {|prayer| expect(prayer.location.country).to eq('Morocco') }
       end
     end
@@ -35,6 +35,30 @@ RSpec.describe Salah do
 
       it 'includes a country code with each prayer' do
         response.prayers.each{|prayer| expect(prayer.location.country_code).to eq('SA')}
+      end
+    end
+
+    describe 'with a dutch IP address' do
+      # When the VCR cassettes are rewritten to disk update
+      # these three values to match.
+      let(:iso8601) { Date.civil(2021, 3, 15).iso8601 }
+      let(:hijri) { "1442-08-02" }
+      let(:prayer_times) { ["05:00", "12:49", "15:59", "19:06", "20:33"] }
+
+      let(:response) { described_class.today(ip: '31.151.143.105') }
+      around {|ex| VCR.use_cassette('Salah.Today.IP') { ex.run} }
+      include_examples 'Salah.today expectations'
+
+      it 'includes a country code with each prayer' do
+        response.prayers.each{|prayer| expect(prayer.location.country_code).to eq('NL')}
+      end
+
+      it 'includes a city name with each prayer' do
+        response.prayers.each {|prayer| expect(prayer.location.city).to eq('Amsterdam') }
+      end
+
+      it 'includes a country name with each prayer' do
+        response.prayers.each {|prayer| expect(prayer.location.country).to eq('Netherlands') }
       end
     end
 
