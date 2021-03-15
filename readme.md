@@ -33,34 +33,39 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 
 ```
 [1] pry(main)> Salah.today(city: 'Rabat')
-=> #<Salah::Response:0x000055ff68295618
+=> #<Salah::Response:0x0000556d61fb3e38
  @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
-    time="05:17",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="05:15",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Rabat", country="Morocco", country_code="MA", latitude=33.97159194946289, longitude=-6.849812984466553, elevation=49.0, time_zone=nil, local_offset=0.0>>,
    #<struct Salah::Prayer
     name="Dhuhr",
-    time="12:37",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="12:36",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Rabat", country="Morocco", country_code="MA", latitude=33.97159194946289, longitude=-6.849812984466553, elevation=49.0, time_zone=nil, local_offset=0.0>>,
    #<struct Salah::Prayer
     name="Asr",
-    time="16:00",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="16:01",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Rabat", country="Morocco", country_code="MA", latitude=33.97159194946289, longitude=-6.849812984466553, elevation=49.0, time_zone=nil, local_offset=0.0>>,
    #<struct Salah::Prayer
     name="Maghrib",
-    time="18:49",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="18:51",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Rabat", country="Morocco", country_code="MA", latitude=33.97159194946289, longitude=-6.849812984466553, elevation=49.0, time_zone=nil, local_offset=0.0>>,
    #<struct Salah::Prayer
     name="Isha",
-    time="19:57",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>],
+    time="19:58",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Rabat", country="Morocco", country_code="MA", latitude=33.97159194946289, longitude=-6.849812984466553, elevation=49.0, time_zone=nil, local_offset=0.0>>],
  @status="OK">
 ```
 
@@ -68,70 +73,80 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 
 ```
 [2] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168)
-=> #<Salah::Response:0x00005605c5cf1658
+=> #<Salah::Response:0x0000556d626f63f8
  @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
-    time="05:17",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="05:16",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Dhuhr",
     time="12:30",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Asr",
     time="15:54",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Maghrib",
-    time="18:43",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="18:44",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>,
    #<struct Salah::Prayer
     name="Isha",
     time="-",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>],
-  @status="OK">
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city=nil, country="", country_code="SA", latitude=21.42251, longitude=39.826168, elevation=-9999.0, time_zone=nil, local_offset=3.0>>],
+ @status="OK">
 ```
 
 **1.3** With a Dutch IP address
 
 ```
-[9] pry(main)> Salah.today(ip: '31.151.143.105')
-=> #<Salah::Response:0x00005605c5f6b208
+[3] pry(main)> Salah.today(ip: '31.151.143.105')
+=> #<Salah::Response:0x0000556d62637c50
  @code="200",
  @prayers=
   [#<struct Salah::Prayer
     name="Fajr",
-    time="05:05",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="05:00",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Amsterdam", country="Netherlands", country_code="NL", latitude=52.37403, longitude=4.88969, elevation=0.0, time_zone=nil, local_offset=1.0>>,
    #<struct Salah::Prayer
     name="Dhuhr",
-    time="12:50",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="12:49",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Amsterdam", country="Netherlands", country_code="NL", latitude=52.37403, longitude=4.88969, elevation=0.0, time_zone=nil, local_offset=1.0>>,
    #<struct Salah::Prayer
     name="Asr",
-    time="15:57",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="15:59",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Amsterdam", country="Netherlands", country_code="NL", latitude=52.37403, longitude=4.88969, elevation=0.0, time_zone=nil, local_offset=1.0>>,
    #<struct Salah::Prayer
     name="Maghrib",
-    time="19:02",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>,
+    time="19:06",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Amsterdam", country="Netherlands", country_code="NL", latitude=52.37403, longitude=4.88969, elevation=0.0, time_zone=nil, local_offset=1.0>>,
    #<struct Salah::Prayer
     name="Isha",
-    time="20:29",
-    date=#<struct Salah::Date iso8601="2021-03-13", hijri="1442-07-29", timestamp=1615593600>,
-    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>>],
-   @status="OK">
+    time="20:33",
+    date=#<struct Salah::Date iso8601="2021-03-15", hijri="1442-08-02", timestamp=1615766400>,
+    school=#<struct Salah::School id=0, name="Ithna Ashari", fajr_angle=16, isha_angle=14>,
+    location=#<struct Salah::Location city="Amsterdam", country="Netherlands", country_code="NL", latitude=52.37403, longitude=4.88969, elevation=0.0, time_zone=nil, local_offset=1.0>>],
+ @status="OK">
   ```
   
 **2.**
