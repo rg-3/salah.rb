@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.pray.zone/v2/times/today.json?latitude=21.416667&longitude=39.816667
+    uri: https://api.pray.zone/v2/times/today.json?latitude=21.416667&longitude=39.816667&school=3
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - salah.rb v0.5.0
+      - salah.rb v0.8.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 14 Mar 2021 21:44:12 GMT
+      - Wed, 17 Mar 2021 03:40:56 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=df79fc0107fc13ec5649a259a348aaccc1615758252; expires=Tue, 13-Apr-21
-        21:44:12 GMT; path=/; domain=.pray.zone; HttpOnly; SameSite=Lax
+      - __cfduid=d854cbbb6366215278d02d0ab5ca26a711615952456; expires=Fri, 16-Apr-21
+        03:40:56 GMT; path=/; domain=.pray.zone; HttpOnly; SameSite=Lax
       Access-Control-Allow-Origin:
       - "*"
       X-Powered-By:
@@ -36,24 +36,24 @@ http_interactions:
       Cf-Cache-Status:
       - MISS
       Cf-Request-Id:
-      - '08d44b717f00000b378f91d000000001'
+      - '08dfdec17300001ec6d9923000000001'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=gN5bWDtaMh8HsIxhFEpX%2F9MwUiBlTLOkukD2Cr%2F1CqpHf59NTV9qT1I4EWC%2BKlNIZs%2FSYkP3tjVIHovzgvS1BncSwV7uJ5mQqhppIyiW"}]}'
+      - '{"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=xJcUdPMFUUYomNAVNZsv0IFcQEAdVjBaTgOoqDBm5zPs7FXVjFtjr%2FwBTGuu3QNB2CIJs5SI8Vm%2F4A4LSsQzJNzOo2wm9roAaUpPxpfr"}]}'
       Nel:
-      - '{"max_age":604800,"report_to":"cf-nel"}'
+      - '{"report_to":"cf-nel","max_age":604800}'
       Vary:
       - Accept-Encoding
       Server:
       - cloudflare
       Cf-Ray:
-      - 6300ae959c1c0b37-AMS
+      - 631333e25faa1ec6-AMS
       Alt-Svc:
       - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"code":200,"status":"OK","results":{"datetime":[{"times":{"Imsak":"05:06","Sunrise":"-","Fajr":"05:16","Dhuhr":"12:30","Asr":"15:54","Sunset":"-","Maghrib":"18:43","Isha":"-","Midnight":"-"},"date":{"timestamp":1615680000,"gregorian":"2021-03-14","hijri":"1442-08-01"}}],"location":{"latitude":21.416667,"longitude":39.816667,"elevation":-9999.0,"country":"","country_code":"SA","timezone":"Asia/Riyadh","local_offset":3.0},"settings":{"timeformat":"HH:mm","school":"Ithna
-        Ashari","juristic":"Shafii","highlat":"None","fajr_angle":18.5,"isha_angle":90.0}}}'
-  recorded_at: Sun, 14 Mar 2021 21:44:12 GMT
+      string: '{"code":200,"status":"OK","results":{"datetime":[{"times":{"Imsak":"05:04","Sunrise":"-","Fajr":"05:14","Dhuhr":"12:29","Asr":"15:53","Sunset":"-","Maghrib":"-","Isha":"-","Midnight":"-"},"date":{"timestamp":1615939200,"gregorian":"2021-03-17","hijri":"1442-08-04"}}],"location":{"latitude":21.416667,"longitude":39.816667,"elevation":-9999.0,"country":"","country_code":"SA","timezone":"Asia/Riyadh","local_offset":3.0},"settings":{"timeformat":"HH:mm","school":"Muslim
+        World League","juristic":"Shafii","highlat":"None","fajr_angle":18.5,"isha_angle":90.0}}}'
+  recorded_at: Wed, 17 Mar 2021 03:40:55 GMT
 recorded_with: VCR 6.0.0
