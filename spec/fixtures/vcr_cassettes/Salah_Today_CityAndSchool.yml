@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pray.zone/v2/times/today.json?city=Amsterdam&school=7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - salah.rb v0.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Mar 2021 01:44:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc482ee884acdea81058610e4715031cd1615945495; expires=Fri, 16-Apr-21
+        01:44:55 GMT; path=/; domain=.pray.zone; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Powered-By:
+      - ASP.NET
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - '08df748c2f00007335fd86f000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=%2B0WwOGU80Yz9pSby4iS9lycXArCibrZIpF0C%2FVMNhBfcSfec1IZq6We2eo3Qg5ULcenhS%2FwcznKhyGl4IMtghqOiGdVD35mVknpZrXZ9"}],"max_age":604800}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 631289f37c3b7335-AMS
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":200,"status":"OK","results":{"datetime":[{"times":{"Imsak":"04:45","Sunrise":"06:49","Fajr":"04:55","Dhuhr":"12:49","Asr":"16:01","Sunset":"18:49","Maghrib":"19:13","Isha":"20:37","Midnight":"23:52"},"date":{"timestamp":1615939200,"gregorian":"2021-03-17","hijri":"1442-08-04"}}],"location":{"latitude":52.370216369628906,"longitude":4.8951678276062012,"elevation":5.0,"city":"Amsterdam","country":"Netherlands","country_code":"NL","timezone":"Europe/Amsterdam","local_offset":1.0},"settings":{"timeformat":"HH:mm","school":"Institute
+        of Geophysics, University of Tehran","juristic":"Shafii","highlat":"None","fajr_angle":18.0,"isha_angle":17.0}}}'
+  recorded_at: Wed, 17 Mar 2021 01:44:55 GMT
+recorded_with: VCR 6.0.0

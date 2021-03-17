@@ -62,6 +62,16 @@ RSpec.describe Salah do
       end
     end
 
+    describe 'with a Tehran university as the school' do
+      let(:response) { described_class.today(city: 'Amsterdam', school: Salah::School.find_by_id(7)) }
+      around {|ex| VCR.use_cassette('Salah.Today.CityAndSchool') { ex.run} }
+
+      it "returns the school used for the calculation with each prayer" do
+        response.prayers.each{|prayer| expect(prayer.school.id).to eq(7)}
+      end
+    end
+
+
     describe 'with no city, coordinates or IP address' do
       let(:response) { described_class.today }
       it 'raises an error' do
