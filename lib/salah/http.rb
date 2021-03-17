@@ -38,8 +38,8 @@ class Salah::HTTP
 
   def parse_params!(params)
     params.delete_if{|_, v| v.nil?}
-    params[:school] = params[:school].id if params[:school].respond_to?(:id)
-    params[:juristic] = params[:juristic].id if params[:juristic].respond_to?(:id)
+    params[:school]   = Integer(params[:school]) if params[:school]
+    params[:juristic] = Integer(params[:juristic]) if params[:juristic]
     return params if params[:city] || params[:ip]
     return params if params[:latitude] && params[:longitude]
     raise NoLocationError.new("Please provide a city, longitude and latitude coordinates or an IP address")

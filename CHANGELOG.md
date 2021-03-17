@@ -2,6 +2,10 @@
 
 ## Next
 
+* Cast location and juristic using `Kernel#Integer`.
+
+* Add `Salah::{Location,Juristic}#to_int`.
+
 * Allow an instance of `Salah::Juristic` to be passed as the `juristic: ` option.
 
 * Add `Salah.juristics`.
