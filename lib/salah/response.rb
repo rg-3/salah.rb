@@ -1,7 +1,21 @@
 class Salah::Response
   PRAYER_NAMES = %w(Fajr Dhuhr Asr Maghrib Isha)
+  #
+  # @return [Array<Salah::Prayer>]
+  #   Returns an array of {Salah::Prayer} objects.
+  #
   attr_reader :prayers
+
+  #
+  # @return [String]
+  #   Returns the HTTP status code (eg "200")
+  #
   attr_reader :code
+
+  #
+  # @return [String]
+  #   Returns the status of the response (eg "OK")
+  #
   attr_reader :status
 
   def initialize(res, body)

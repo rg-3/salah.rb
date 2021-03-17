@@ -10,10 +10,18 @@ class Salah
 
   Date = Struct.new(:iso8601, :hijri, :timestamp)
 
+  #
+  # @return [Array<Salah::Juristic>]
+  #   Returns an array of {Salah::Juristic} objects.
+  #
   def self.juristics
     @juristics ||= [[0, 'Shafii'], [1, 'Hanafi']].map{|params| Salah::Juristic.new(*params)}
   end
 
+  #
+  # @return [Array<Salah::School>]
+  #   Returns an array of {Salah::School} objects.
+  #
   def self.schools
     @schools ||= [
       [0, 'Ithna Ashari', 16, 14],
@@ -31,14 +39,23 @@ class Salah
     ].map {|params| Salah::School.new(*params)}
   end
 
+  #
+  # @return (see Salah::HTTP#today)
+  #
   def self.today(**options)
     new(key: options.delete(:key)).today(**options)
   end
 
+  #
+  # @return (see Salah::HTTP#tomorrow)
+  #
   def self.tomorrow(**options)
     new(key: options.delete(:key)).tomorrow(**options)
   end
 
+  #
+  # @return (see Salah::HTTP#this_week)
+  #
   def self.this_week(**options)
     new(key: options.delete(:key)).this_week(**options)
   end
@@ -47,14 +64,23 @@ class Salah
     @client = Salah::HTTP.new(key: key)
   end
 
+  #
+  # @return (see Salah::HTTP#today)
+  #
   def today(**options)
     @client.today(options)
   end
 
+  #
+  # @return (see Salah::HTTP#tomorrow)
+  #
   def tomorrow(**options)
     @client.tomorrow(options)
   end
 
+  #
+  # @return (see Salah::HTTP#this_week)
+  #
   def this_week(**options)
     @client.this_week(options)
   end

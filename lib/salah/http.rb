@@ -12,14 +12,32 @@ class Salah::HTTP
     @key = key
   end
 
+  #
+  # @note
+  #   This method provides an interface to the [times/today.json endpoint](https://prayertimes.date/api/docs/today).
+  #
+  # @return [Salah::Response]
+  #
   def today(params)
     get "/v2/times/today.json", {key: @key}.merge!(params)
   end
 
+  #
+  # @note
+  #   This method provides an interface to the [times/tomorrow.json endpoint](https://prayertimes.date/api/docs/tomorrow).
+  #
+  # @return [Salah::Response]
+  #
   def tomorrow(params)
     get "/v2/times/tomorrow.json", {key: @key}.merge!(params)
   end
 
+  #
+  # @note
+  #   This method provides an interface to the [times/this_week.json endpoint](https://prayertimes.date/api/docs/this_week).
+  #
+  # @return [Salah::Response]
+  #
   def this_week(params)
     get "/v2/times/this_week.json", {key: @key}.merge!(params)
   end

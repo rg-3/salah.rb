@@ -1,0 +1,3 @@
+-m markdown
+-M redcarpet
+--files readme.md,LICENSE.txt,CHANGELOG.md

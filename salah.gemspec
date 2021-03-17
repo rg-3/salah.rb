@@ -22,4 +22,6 @@ DESCRIPTION
   g.add_development_dependency 'rspec', '~> 3.10'
   g.add_development_dependency 'vcr', '~> 6.0'
   g.add_development_dependency 'webmock', '~> 3.12'
+  g.add_development_dependency 'yardoc', '~> 0.9'
+  g.add_development_dependency 'redcarpet', '~> 3.5'
 end
