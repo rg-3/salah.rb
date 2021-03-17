@@ -38,7 +38,7 @@ class Salah::HTTP
 
   def parse_params!(params)
     params.delete_if{|_, v| v.nil?}
-    params[:school]   = Integer(params[:school]) if params[:school]
+    params[:school]   = Integer(params[:school] ? params[:school] : Salah::School.find_by_name('Muslim World League'))
     params[:juristic] = Integer(params[:juristic]) if params[:juristic]
     return params if params[:city] || params[:ip]
     return params if params[:latitude] && params[:longitude]

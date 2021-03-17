@@ -2,6 +2,8 @@
 
 ## Next
 
+* Default to the `Muslim World League` as the method for calculating prayer times.
+
 * Cast location and juristic using `Kernel#Integer`.
 
 * Add `Salah::{Location,Juristic}#to_int`.

@@ -151,7 +151,7 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
   
 **2.**
 
-Prayer times are calculated according to a school and by default the `Ithna Ashari` school is used. 
+Prayer times are calculated according to a school and by default the `Muslim World League` school is used. 
 If you would like to use a different school, you can provide the `school: ` option. A list of schools 
 can be found with `Salah.schools`. 
 
