@@ -66,7 +66,7 @@ RSpec.describe Salah do
       let(:response) { described_class.today(city: 'Amsterdam', school: Salah::School.find_by_id(7)) }
       around {|ex| VCR.use_cassette('Salah.Today.CityAndSchool') { ex.run} }
 
-      it "returns the school used for the calculation with each prayer" do
+      it "returns the school used for calculation with each prayer" do
         response.prayers.each{|prayer| expect(prayer.school.id).to eq(7)}
       end
     end
