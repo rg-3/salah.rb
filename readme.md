@@ -151,11 +151,9 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
   
 **2.**
 
-Prayer times are calculated by a school and by default countries are assigned to particular 
-schools, according to the [PrayerTimes.date docs](https://prayertimes.date/api/docs/today).
-If you would like to use a particular school different than to the default for your 
-country, you can provide the `school: ...` option and you can find a list of schools using 
-`Salah.schools`. 
+Prayer times are calculated according to a school and by default the `Ithna Ashari` school is used. 
+If you would like to use a different school, you can provide the `school: ` option. A list of schools 
+can be found with `Salah.schools`. 
 
 **2.1** `Salah.schools`
 
