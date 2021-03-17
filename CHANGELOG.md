@@ -2,6 +2,10 @@
 
 ## Next
 
+* Nothing so far.
+
+## v0.8.0
+
 * Default to the `Muslim World League` as the method for calculating prayer times.
 
 * Cast location and juristic using `Kernel#Integer`.
