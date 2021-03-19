@@ -1,8 +1,13 @@
 # CHANGELOG
 
-## Next
+## Next 
 
 * Nothing so far.
+
+## v0.8.1
+
+* `git mv readme.md README.md`
+* Documented parts of the API and improved the README.md documentation
 
 ## v0.8.0
 
