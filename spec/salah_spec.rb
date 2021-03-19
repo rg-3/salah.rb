@@ -5,9 +5,9 @@ RSpec.describe Salah do
     describe 'with the city of Rabat' do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
-      let(:iso8601) { Date.civil(2021, 3, 17).iso8601 }
-      let(:hijri) { "1442-08-04" }
-      let(:prayer_times) { ["05:12", "12:36", "16:01", "18:38", "20:00"] }
+      let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
+      let(:hijri) { "1442-08-06" }
+      let(:prayer_times) { ["05:09", "12:35", "16:02", "18:40", "20:02"] }
 
       let(:response) { described_class.today(city: 'Rabat') }
       around {|ex| VCR.use_cassette('Salah.Today.Rabat') { ex.run } }
@@ -25,9 +25,9 @@ RSpec.describe Salah do
     describe 'with the coordinates of Mecca' do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
-      let(:iso8601) { Date.civil(2021, 3, 17).iso8601 }
-      let(:hijri) { "1442-08-04" }
-      let(:prayer_times) { ["05:14", "12:29", "15:53", "-", "-"] }
+      let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
+      let(:hijri) { "1442-08-06" }
+      let(:prayer_times) { ["05:12", "12:28", "15:53", "-", "-"] }
 
       let(:response) { described_class.today(longitude: 39.816667, latitude: 21.416667)}
       around {|ex| VCR.use_cassette('Salah.Today.Mecca') { ex.run} }
@@ -41,9 +41,9 @@ RSpec.describe Salah do
     describe 'with a dutch IP address' do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
-      let(:iso8601) { Date.civil(2021, 3, 17).iso8601 }
-      let(:hijri) { "1442-08-04" }
-      let(:prayer_times) { ["04:55", "12:49", "16:01", "18:49", "20:37"] }
+      let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
+      let(:hijri) { "1442-08-06" }
+      let(:prayer_times) { ["04:49", "12:48", "16:04", "18:52", "20:41"] }
 
       let(:response) { described_class.today(ip: '31.151.143.105') }
       around {|ex| VCR.use_cassette('Salah.Today.IP') { ex.run} }
