@@ -234,13 +234,15 @@ from 0 to 12 (excluding 6) or a `Salah::School` object. The default school is th
 
 **3.** `Salah::Response`
 
+**3.1** The response object
+
 By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`, 
 `Salah.tomorrow`, and `Salah.this_week`. Its most useful property is `Response#prayers`, which
 returns an array of `Salah::Prayer` objects.
 
 ```ruby
 res = Salah.today(city: 'Cairo')
-fajr = res.prayers.find{|prayer| prayer.name == 'Fajr'}
+fajr = res.prayers.find(&:fajr?)
 puts "Fajr is at #{fajr.time} in Cairo"
 ```
 
