@@ -241,7 +241,7 @@ By now you might have noticed the `Salah::Response` object. It is returned by `S
 returns an array of `Salah::Prayer` objects.
 
 ```ruby
-res = Salah.today(city: 'Cairo')
+res  = Salah.today(city: 'Cairo')
 fajr = res.prayers.find(&:fajr?)
 puts "Fajr is at #{fajr.time} in Cairo"
 ```
