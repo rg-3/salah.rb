@@ -2,7 +2,7 @@
 
 ## Next 
 
-* Nothing so far.
+* Add day of the week predicates to `Salah::Prayer` and `Salah::Date`.
 
 ## v0.8.1
 

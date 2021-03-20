@@ -246,6 +246,19 @@ fajr = res.prayers.find(&:fajr?)
 puts "Fajr is at #{fajr.time} in Cairo"
 ```
 
+**3.2** Filtering by day of the week
+
+The `Salah.this_week` method returns a response with an array of `Salah::Prayer` 
+objects for the week but what if you want to filter to find only the prayers 
+for Friday ? No problem, that use case is covered.
+
+```ruby
+prayers = Salah.this_week(city: 'Paris').prayers
+prayers.select(&:friday?).each do |prayer|
+  puts "#{prayer.name} starts at #{prayer.time} on Friday"
+end
+```
+
 ## <a id='install'> Install </a>
 
 Salah.rb is available [as a RubyGem](https://rubygems.org/gems/salah.rb).
