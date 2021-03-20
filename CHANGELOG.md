@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## Next 
+## Next
+
+* Nothing so far.
+
+## v0.9.0
 
 * Add day of the week predicates to `Salah::Prayer` and `Salah::Date`.
 
