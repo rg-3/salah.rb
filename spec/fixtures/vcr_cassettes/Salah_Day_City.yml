@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pray.zone/v2/times/day.json?city=Leiden&date=2021-03-21&school=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - salah.rb v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 21 Mar 2021 02:08:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2fd9cf6d0919de16d000116ece9023af1616292508; expires=Tue, 20-Apr-21
+        02:08:28 GMT; path=/; domain=.pray.zone; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Powered-By:
+      - ASP.NET
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - '08f4238a1e0000081c30b22000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=eYCiLji39idcLOtgIE7ZAPj8u5YuCAV%2F88bmYNDDynydJo5CFA0Ugcfscq9VvBnWgBZKIEiv3s5HjAe%2FkaEzXDTF0JpJT%2FZ1zeikcxLr"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6333a1f03a8d081c-CDG
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":200,"status":"OK","results":{"datetime":[{"times":{"Imsak":"04:36","Sunrise":"06:42","Fajr":"04:46","Dhuhr":"12:49","Asr":"16:08","Sunset":"18:58","Maghrib":"18:58","Isha":"20:46","Midnight":"00:50"},"date":{"timestamp":1616284800,"gregorian":"2021-03-21","hijri":"1442-08-08"}}],"location":{"latitude":52.160114288330078,"longitude":4.4970097541809082,"elevation":6.0,"city":"Leiden","country":"Netherlands","country_code":"NL","timezone":"Europe/Amsterdam","local_offset":1.0},"settings":{"timeformat":"HH:mm","school":"Muslim
+        World League","juristic":"Shafii","highlat":"None","fajr_angle":18.0,"isha_angle":17.0}}}'
+  recorded_at: Sun, 21 Mar 2021 02:08:29 GMT
+recorded_with: VCR 6.0.0

@@ -93,4 +93,16 @@ RSpec.describe Salah do
       end
     end
   end
+
+  describe '.day' do
+    describe 'requesting prayers for a given date' do
+      let(:date) { Date.civil 2021, 3, 21 }
+      let(:response) { Salah.day(date, city: 'Leiden') }
+      around {|ex| VCR.use_cassette('Salah.Day.City') { ex.run} }
+
+      it 'returns prayers for the given date' do
+        response.prayers.each{|prayer| expect(prayer.date.to_date).to eq(date)}
+      end
+    end
+  end
 end

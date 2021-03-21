@@ -2,7 +2,8 @@
 
 ## Next
 
-* Nothing so far.
+* Add `Salah.day` for retrieving prayers for a given day.
+
 
 ## v0.9.0
 

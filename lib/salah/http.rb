@@ -42,6 +42,21 @@ class Salah::HTTP
     get "/v2/times/this_week.json", {key: @key}.merge!(params)
   end
 
+  #
+  # @param [Date, String] date
+  #   The date to request prayers for, either as a Date object or a String in iso8601 format.
+  #
+  # @param [Hash] options
+  #   A hash of options that map to PrayerTimes.date options.
+  #
+  # @note
+  #  This method provides an interface to the [times/day.json endpoint](https://prayertimes.date/api/docs/day)
+  #
+  def day(date, params)
+    date = date.iso8601 if date.respond_to?(:iso8601)
+    get "/v2/times/day.json", {key: @key, date: date}.merge!(params)
+  end
+
   private
 
   def get(path, params)

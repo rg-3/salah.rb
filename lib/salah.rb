@@ -41,22 +41,31 @@ class Salah
   #
   # @return (see Salah::HTTP#today)
   #
-  def self.today(**options)
-    new(key: options.delete(:key)).today(**options)
+  def self.today(options={})
+    new(key: options.delete(:key)).today(options)
   end
 
   #
   # @return (see Salah::HTTP#tomorrow)
   #
-  def self.tomorrow(**options)
-    new(key: options.delete(:key)).tomorrow(**options)
+  def self.tomorrow(options={})
+    new(key: options.delete(:key)).tomorrow(options)
   end
 
   #
   # @return (see Salah::HTTP#this_week)
   #
-  def self.this_week(**options)
-    new(key: options.delete(:key)).this_week(**options)
+  def self.this_week(options={})
+    new(key: options.delete(:key)).this_week(options)
+  end
+
+  #
+  # @param (see Salah::HTTP#day)
+  #
+  # @return (see Salah::HTTP#day)
+  #
+  def self.day(date, options={})
+    new(key: options.delete(:key)).day(date, options)
   end
 
   def initialize(key: nil)
@@ -66,21 +75,30 @@ class Salah
   #
   # @return (see Salah::HTTP#today)
   #
-  def today(**options)
+  def today(options={})
     @client.today(options)
   end
 
   #
   # @return (see Salah::HTTP#tomorrow)
   #
-  def tomorrow(**options)
+  def tomorrow(options={})
     @client.tomorrow(options)
   end
 
   #
   # @return (see Salah::HTTP#this_week)
   #
-  def this_week(**options)
+  def this_week(options={})
     @client.this_week(options)
+  end
+
+  #
+  # @param (see Salah::HTTP#day)
+  #
+  # @return (see Salah::HTTP#day)
+  #
+  def day(date, options={})
+    @client.day(date, options)
   end
 end
