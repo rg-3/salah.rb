@@ -24,12 +24,12 @@ class Salah::HTTP
 
   #
   # @note
-  #   This method provides an interface to the [times/tomorrow.json endpoint](https://prayertimes.date/api/docs/tomorrow).
+  #   This method calls {#day} with tomorrow's date. Tomorrow's date is calculated relative to system time.
   #
   # @return [Salah::Response]
   #
   def tomorrow(params)
-    get "/v2/times/tomorrow.json", {key: @key}.merge!(params)
+    day Date.today.next_day, params
   end
 
   #
