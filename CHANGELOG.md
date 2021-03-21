@@ -2,6 +2,10 @@
 
 ## Next
 
+* Nothing so far.
+
+## v0.10.0
+
 * Fix `Salah.tomorrow` by implementing it on top of `Salah.day`.
 
 * Add `Salah.day` for retrieving prayers for a given day.
