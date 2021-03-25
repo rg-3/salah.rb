@@ -2,7 +2,7 @@
 
 ## Next
 
-* Nothing so far.
+* Accept short form `lat` and `lng` for the latitude and longitude params.
 
 ## v0.10.0
 
@@ -64,7 +64,7 @@
 
 * Improve `Salah::Response`.
 
-* Add `Salah::HTTP::BadResponseError` and raise it when the response is 
+* Add `Salah::HTTP::BadResponseError` and raise it when the response is
   anything other than `Net::HTTPOK`.
 
 ## v0.2.0

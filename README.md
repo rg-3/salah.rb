@@ -11,11 +11,11 @@
 ## <a id='introduction'>Introduction</a>
 
 Salah.rb is a Ruby library that provides an API for retrieving Islamic prayer times.
-The library is implemented by making HTTP requests to the [PrayerTimes.date](https://prayertimes.date) 
-web API. The [PrayerTimes.date](https://prayertimes.date) web API is free to use and at the time of 
+The library is implemented by making HTTP requests to the [PrayerTimes.date](https://prayertimes.date)
+web API. The [PrayerTimes.date](https://prayertimes.date) web API is free to use and at the time of
 writing does not require an API key.
 
-It's possible that in the future an API key will be required. If that comes to be you 
+It's possible that in the future an API key will be required. If that comes to be you
 can pass the `key: '...'` option to the methods described in this document.
 
 ## <a id='examples'>Examples</a>
@@ -23,10 +23,10 @@ can pass the `key: '...'` option to the methods described in this document.
 **1.**
 
 You can retrieve the prayer times for today, tomorrow, or this week using the methods
-`Salah.today`, `Salah.tomorrow`, and `Salah.this_week`. You can provide either a city 
+`Salah.today`, `Salah.tomorrow`, and `Salah.this_week`. You can provide either a city
 name, the long/lat coordinates, or an IP address to determine your location.
 
-The examples use `Salah.today` but you could also repeat them with `Salah.tomorrow` and 
+The examples use `Salah.today` but you could also repeat them with `Salah.tomorrow` and
 `Salah.this_week`.
 
 **1.1** With a city name
@@ -162,12 +162,12 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
     juristic=#<struct Salah::Juristic id=0, name="Shafii">>],
  @status="OK">
   ```
-  
+
 **2.**
 
-Prayer times are calculated according to a school. The default school is the Muslim World League. 
-If you would like to use a different school, you can provide the `school: ` option. A list of schools 
-can be found with `Salah.schools`. 
+Prayer times are calculated according to a school. The default school is the Muslim World League.
+If you would like to use a different school, you can provide the `school: ` option. A list of schools
+can be found with `Salah.schools`.
 
 **2.1** `Salah.schools`
 
@@ -191,8 +191,8 @@ This method returns an array of `Salah::School` objects:
 
 **2.2** Choosing a particular school
 
-The method of calculation can be set by setting the `school: ` option. The school option can be an integer 
-from 0 to 12 (excluding 6) or a `Salah::School` object. The default school is the Muslim World League. 
+The method of calculation can be set by setting the `school: ` option. The school option can be an integer
+from 0 to 12 (excluding 6) or a `Salah::School` object. The default school is the Muslim World League.
 
 ```
 [4] pry(main)> Salah.today(latitude: 21.422510, longitude: 39.826168, school: Salah::School.find_by_id(7))
@@ -236,7 +236,7 @@ from 0 to 12 (excluding 6) or a `Salah::School` object. The default school is th
 
 **3.1** The response object
 
-By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`, 
+By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`,
 `Salah.tomorrow`, and `Salah.this_week`. Its most useful property is `Response#prayers`, which
 returns an array of `Salah::Prayer` objects.
 
@@ -248,8 +248,8 @@ puts "Fajr is at #{fajr.time} in Cairo"
 
 **3.2** Filtering by day of the week
 
-The `Salah.this_week` method returns a response with an array of `Salah::Prayer` 
-objects for the week but what if you want to filter to find only the prayers 
+The `Salah.this_week` method returns a response with an array of `Salah::Prayer`
+objects for the week but what if you want to filter to find only the prayers
 for Friday ? No problem, that use case is covered.
 
 ```ruby
@@ -257,6 +257,15 @@ prayers = Salah.this_week(city: 'Paris').prayers
 prayers.select(&:friday?).each do |prayer|
   puts "#{prayer.name} starts at #{prayer.time} on Friday"
 end
+```
+
+**4.** Short form coordinate options
+
+It is possible to provide short form options for the longitude and latitude
+params as `lng` and `lat` respectively.
+
+```ruby
+Salah.today(lng: XX.XX, lat: XX.XX) # => Salah::Response
 ```
 
 ## <a id='install'> Install </a>
@@ -267,11 +276,11 @@ Salah.rb is available [as a RubyGem](https://rubygems.org/gems/salah.rb).
 
 ## <a id='thanks'> Thanks </a>
 
-Thanks to the developers and people at [PrayerTimes.date](https://www.prayertimes.date) 
+Thanks to the developers and people at [PrayerTimes.date](https://www.prayertimes.date)
 for providing the free web API service that powers salah.rb.
 
-Praise, thanks and gratitude to the The Most Merciful for the inspiration to work on this 
-project. 
+Praise, thanks and gratitude to the The Most Merciful for the inspiration to work on this
+project.
 
 ## <a id='license'> LICENSE </a>
 

@@ -38,6 +38,18 @@ RSpec.describe Salah do
       end
     end
 
+    describe 'with short form coordinates for Mecca (lng/lat)' do
+      # When the VCR cassettes are rewritten to disk update
+      # these three values to match.
+      let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
+      let(:hijri) { "1442-08-06" }
+      let(:prayer_times) { ["05:12", "12:28", "15:53", "-", "-"] }
+
+      let(:response) { described_class.today(lng: 39.816667, lat: 21.416667)}
+      around {|ex| VCR.use_cassette('Salah.Today.Mecca') { ex.run} }
+      include_examples 'Salah.today expectations'
+    end
+
     describe 'with a dutch IP address' do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
