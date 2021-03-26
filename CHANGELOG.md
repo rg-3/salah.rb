@@ -2,6 +2,10 @@
 
 ## Next
 
+* Nothing yet.
+
+## v0.11.0
+
 * Accept short form `lat` and `lng` for the latitude and longitude params.
 
 ## v0.10.0
