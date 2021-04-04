@@ -145,6 +145,8 @@ Salah.rb is available [as a RubyGem](https://rubygems.org/gems/salah.rb).
 Thanks to the developers and people at [PrayerTimes.date](https://www.prayertimes.date)
 for providing the free web API service that powers salah.rb.
 
+Thanks to The Sustainer for guiding me towards working on this project.
+
 ## <a id='license'> LICENSE </a>
 
 MIT. See [/LICENSE.txt](/LICENSE.txt)
