@@ -50,13 +50,23 @@ The examples use `Salah.today` but you could also repeat them with `Salah.tomorr
 # => #<Salah::Response:0x000055e96db10560 @code="200", @status="OK", @prayers=[..]>
 ```
 
-**2.** `Salah::Response`
+**2.** `Salah.day`
 
-**2.1** The response object
+The `Salah.day` method can request prayers for a given iso8601 date. The rest of the
+method arguments are the same as `Salah.{today,tomorrow,this_week}`.
+
+```
+> Salah.day('2021-12-1', city: 'Amsterdam')
+# => #<Salah::Response:0x...>
+```
+
+**3.** `Salah::Response`
+
+**3.1** The response object
 
 By now you might have noticed the `Salah::Response` object. It is returned by `Salah.today`,
-`Salah.tomorrow`, and `Salah.this_week`. Its most useful property is `Response#prayers`, which
-returns an array of [`Salah::Prayer`](https://github.com/rg-3/salah.rb/blob/master/lib/salah/prayer.rb)
+`Salah.tomorrow`, `Salah.this_week` and `Salah.day`. Its most useful property is `Response#prayers`,
+which returns an array of [`Salah::Prayer`](https://github.com/rg-3/salah.rb/blob/master/lib/salah/prayer.rb)
 objects.
 
 ```ruby
@@ -65,7 +75,7 @@ fajr = res.prayers.find(&:fajr?)
 puts "Fajr is at #{fajr.time} in Cairo"
 ```
 
-**2.2** Filtering by day of the week
+**3.2** Filtering by day of the week
 
 The `Salah.this_week` method returns a response with an array of `Salah::Prayer`
 objects for the week but what if you want to filter to find only the prayers
@@ -78,13 +88,13 @@ prayers.select(&:friday?).each do |prayer|
 end
 ```
 
-**3.**
+**4.**
 
 Prayer times are calculated according to a school. The default school is the Muslim World League.
 If you would like to use a different school, you can provide the `school: ` option. A list of schools
 can be found with `Salah.schools`.
 
-**3.1** `Salah.schools`
+**4.1** `Salah.schools`
 
 This method returns an array of `Salah::School` objects:
 
@@ -104,7 +114,7 @@ This method returns an array of `Salah::School` objects:
  #<struct Salah::School id=12, name="Turkey", fajr_angle=12, isha_angle=12>]
 ```
 
-**3.2** Choosing a particular school
+**4.2** Choosing a particular school
 
 The method of calculation can be set by setting the `school: ` option. The school option can be an integer
 from 0 to 12 (excluding 6) or a `Salah::School` object. The default school is the Muslim World League.
@@ -114,7 +124,7 @@ from 0 to 12 (excluding 6) or a `Salah::School` object. The default school is th
 # => #<Salah::Response:0x000055e96db10560 @code="200", @status="OK", @prayers=[..]>
  ```
 
-**4.** Short form coordinate options
+**5.** Short form coordinate options
 
 It is possible to provide short form options for the longitude and latitude
 params as `lng` and `lat` respectively.
@@ -134,9 +144,6 @@ Salah.rb is available [as a RubyGem](https://rubygems.org/gems/salah.rb).
 
 Thanks to the developers and people at [PrayerTimes.date](https://www.prayertimes.date)
 for providing the free web API service that powers salah.rb.
-
-Praise and thanks to the The Most Merciful for the ability and inspiration 
-to work on this project. 
 
 ## <a id='license'> LICENSE </a>
 

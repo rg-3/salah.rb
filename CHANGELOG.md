@@ -2,7 +2,7 @@
 
 ## Next
 
-* Nothing yet.
+* Add README.md documentation for `Salah.day`.
 
 ## v0.11.0
 
