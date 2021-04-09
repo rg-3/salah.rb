@@ -2,7 +2,7 @@
 
 ## Next
 
-* Nothing so far.
+* Update the gems' description
 
 ## v1.0.0
 

@@ -11,8 +11,8 @@ Gem::Specification.new do |g|
 
   g.description = <<-DESCRIPTION
 Salah.rb is a Ruby library that provides an API for retrieving Islamic prayer times.
-The library is implemented by making HTTP requests to the PrayerTimes.date web API,
-which is free to use.
+The library is implemented by making HTTP requests to the free-to-use PrayerTimes.date 
+web API.
 DESCRIPTION
 
   g.licenses    = ['MIT']
