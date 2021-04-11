@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## Next
+## next
+
+* Nothing so far.
+
+## v1.1.0
 
 * Update docs.
 
