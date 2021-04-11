@@ -2,7 +2,7 @@
 
 ## Next
 
-* Nothing so far.
+* Add `Salah::Response#headers`.
 
 ## v1.0.1
 
