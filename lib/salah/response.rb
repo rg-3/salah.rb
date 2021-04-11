@@ -15,6 +15,9 @@ class Salah::Response
   #
   # @return [String]
   #  Returns the status of the response (eg "OK")
+  #  This attribute is found in the response body
+  #  and shouldn't be confused with the HTTP status
+  #  line.
   #
   attr_reader :status
 

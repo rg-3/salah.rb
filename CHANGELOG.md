@@ -2,6 +2,8 @@
 
 ## Next
 
+* Update docs.
+
 * Add `Salah::Response#headers`.
 
 ## v1.0.1
