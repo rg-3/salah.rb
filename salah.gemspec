@@ -7,13 +7,8 @@ Gem::Specification.new do |g|
   g.email       = '1aab@protonmail.com'
   g.version     = Salah::VERSION
 
-  g.summary     = 'Salah.rb is a Ruby library that provides an API for retrieving Islamic prayer times.'
-
-  g.description = <<-DESCRIPTION
-Salah.rb is a Ruby library that provides an API for retrieving Islamic prayer times.
-The library is implemented by making HTTP requests to the free-to-use PrayerTimes.date 
-web API.
-DESCRIPTION
+  g.summary     = 'salah.rb is a Ruby library for retrieving Islamic prayer times.'
+  g.description = g.summary
 
   g.licenses    = ['MIT']
   g.files	= `git ls-files`.split($/)
