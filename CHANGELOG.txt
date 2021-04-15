@@ -2,7 +2,9 @@
 
 ## next
 
-* Nothing so far.
+* Add the Ruby Style Guide linter [standard](https://github.com/testdouble/standard)
+)
+* Add `Rakefile.rb`
 
 ## v1.1.0
 
@@ -57,11 +59,14 @@
 
 ## v0.7.0
 
-* Add `Salah::HTTP::NoLocationError` and raise it when location requirements are missing.
+* Add `Salah::HTTP::NoLocationError` and raise it when location
+  requirements are missing.
 
-* Add custom `user-agent` when making requests to the [PrayerTimes.date](https:/www.prayertimes.date) API.
+* Add custom `user-agent` when making requests to
+  the [PrayerTimes.date](https:/www.prayertimes.date) API.
 
-* Add `Salah::Prayer#location`, which returns an instance of `Salah::Location`.
+* Add `Salah::Prayer#location`, which returns an instance
+  of `Salah::Location`.
 
 * Add `Salah::Location`.
 

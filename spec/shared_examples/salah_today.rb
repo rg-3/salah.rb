@@ -1,4 +1,4 @@
-RSpec.shared_examples 'Salah.today expectations' do
+RSpec.shared_examples "Salah.today expectations" do
   it "includes today's five prayers" do
     expect(response.prayers.size).to eq(5)
   end
@@ -11,11 +11,11 @@ RSpec.shared_examples 'Salah.today expectations' do
     expect(response.prayers.map(&:time)).to eq(prayer_times)
   end
 
-  it 'includes an iso8601 date with each prayer' do
-    response.prayers.each {|prayer| expect(prayer.date.iso8601).to eq(iso8601) }
+  it "includes an iso8601 date with each prayer" do
+    response.prayers.each { |prayer| expect(prayer.date.iso8601).to eq(iso8601) }
   end
 
-  it 'includes a hijri date with each prayer' do
-    response.prayers.each {|prayer| expect(prayer.date.hijri).to eq(hijri) }
+  it "includes a hijri date with each prayer" do
+    response.prayers.each { |prayer| expect(prayer.date.hijri).to eq(hijri) }
   end
 end

@@ -1,119 +1,118 @@
-require_relative 'setup'
+require_relative "setup"
 
 RSpec.describe Salah do
-  describe '.today' do
-    describe 'with the city of Rabat' do
+  describe ".today" do
+    describe "with the city of Rabat" do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
       let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
       let(:hijri) { "1442-08-06" }
       let(:prayer_times) { ["05:09", "12:35", "16:02", "18:40", "20:02"] }
 
-      let(:response) { described_class.today(city: 'Rabat') }
-      around {|ex| VCR.use_cassette('Salah.Today.Rabat') { ex.run } }
-      include_examples 'Salah.today expectations'
+      let(:response) { described_class.today(city: "Rabat") }
+      around { |ex| VCR.use_cassette("Salah.Today.Rabat") { ex.run } }
+      include_examples "Salah.today expectations"
 
-      it 'includes a city name with each prayer' do
-        response.prayers.each {|prayer| expect(prayer.location.city).to eq('Rabat') }
+      it "includes a city name with each prayer" do
+        response.prayers.each { |prayer| expect(prayer.location.city).to eq("Rabat") }
       end
 
-      it 'includes a country name with each prayer' do
-        response.prayers.each {|prayer| expect(prayer.location.country).to eq('Morocco') }
+      it "includes a country name with each prayer" do
+        response.prayers.each { |prayer| expect(prayer.location.country).to eq("Morocco") }
       end
     end
 
-    describe 'with the coordinates of Mecca' do
+    describe "with the coordinates of Mecca" do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
       let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
       let(:hijri) { "1442-08-06" }
       let(:prayer_times) { ["05:12", "12:28", "15:53", "-", "-"] }
 
-      let(:response) { described_class.today(longitude: 39.816667, latitude: 21.416667)}
-      around {|ex| VCR.use_cassette('Salah.Today.Mecca') { ex.run} }
-      include_examples 'Salah.today expectations'
+      let(:response) { described_class.today(longitude: 39.816667, latitude: 21.416667) }
+      around { |ex| VCR.use_cassette("Salah.Today.Mecca") { ex.run } }
+      include_examples "Salah.today expectations"
 
-      it 'includes a country code with each prayer' do
-        response.prayers.each{|prayer| expect(prayer.location.country_code).to eq('SA')}
+      it "includes a country code with each prayer" do
+        response.prayers.each { |prayer| expect(prayer.location.country_code).to eq("SA") }
       end
     end
 
-    describe 'with short form coordinates for Mecca (lng/lat)' do
+    describe "with short form coordinates for Mecca (lng/lat)" do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
       let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
       let(:hijri) { "1442-08-06" }
       let(:prayer_times) { ["05:12", "12:28", "15:53", "-", "-"] }
 
-      let(:response) { described_class.today(lng: 39.816667, lat: 21.416667)}
-      around {|ex| VCR.use_cassette('Salah.Today.Mecca') { ex.run} }
-      include_examples 'Salah.today expectations'
+      let(:response) { described_class.today(lng: 39.816667, lat: 21.416667) }
+      around { |ex| VCR.use_cassette("Salah.Today.Mecca") { ex.run } }
+      include_examples "Salah.today expectations"
     end
 
-    describe 'with a dutch IP address' do
+    describe "with a dutch IP address" do
       # When the VCR cassettes are rewritten to disk update
       # these three values to match.
       let(:iso8601) { Date.civil(2021, 3, 19).iso8601 }
       let(:hijri) { "1442-08-06" }
       let(:prayer_times) { ["04:49", "12:48", "16:04", "18:52", "20:41"] }
 
-      let(:response) { described_class.today(ip: '31.151.143.105') }
-      around {|ex| VCR.use_cassette('Salah.Today.IP') { ex.run} }
-      include_examples 'Salah.today expectations'
+      let(:response) { described_class.today(ip: "31.151.143.105") }
+      around { |ex| VCR.use_cassette("Salah.Today.IP") { ex.run } }
+      include_examples "Salah.today expectations"
 
-      it 'includes a country code with each prayer' do
-        response.prayers.each{|prayer| expect(prayer.location.country_code).to eq('NL')}
+      it "includes a country code with each prayer" do
+        response.prayers.each { |prayer| expect(prayer.location.country_code).to eq("NL") }
       end
 
-      it 'includes a city name with each prayer' do
-        response.prayers.each {|prayer| expect(prayer.location.city).to eq('Amsterdam') }
+      it "includes a city name with each prayer" do
+        response.prayers.each { |prayer| expect(prayer.location.city).to eq("Amsterdam") }
       end
 
-      it 'includes a country name with each prayer' do
-        response.prayers.each {|prayer| expect(prayer.location.country).to eq('Netherlands') }
+      it "includes a country name with each prayer" do
+        response.prayers.each { |prayer| expect(prayer.location.country).to eq("Netherlands") }
       end
     end
 
-    describe 'with a Tehran university as the school' do
-      let(:response) { described_class.today(city: 'Amsterdam', school: Salah::School.find_by_id(7)) }
-      around {|ex| VCR.use_cassette('Salah.Today.CityAndSchool') { ex.run} }
+    describe "with a Tehran university as the school" do
+      let(:response) { described_class.today(city: "Amsterdam", school: Salah::School.find_by_id(7)) }
+      around { |ex| VCR.use_cassette("Salah.Today.CityAndSchool") { ex.run } }
 
       it "returns the school used for calculation with each prayer" do
-        response.prayers.each{|prayer| expect(prayer.school.id).to eq(7)}
+        response.prayers.each { |prayer| expect(prayer.school.id).to eq(7) }
       end
     end
 
-
-    describe 'with no city, coordinates or IP address' do
+    describe "with no city, coordinates or IP address" do
       let(:response) { described_class.today }
-      it 'raises an error' do
+      it "raises an error" do
         expect { response }.to raise_error(Salah::HTTP::NoLocationError)
       end
     end
 
-    describe 'with latitude but no longitude' do
+    describe "with latitude but no longitude" do
       let(:response) { described_class.today latitude: 21.0 }
-      it 'raises an error' do
+      it "raises an error" do
         expect { response }.to raise_error(Salah::HTTP::NoLocationError)
       end
     end
 
-    describe 'with longitude but no latitude' do
+    describe "with longitude but no latitude" do
       let(:response) { described_class.today longitude: 21.0 }
-      it 'raises an error' do
+      it "raises an error" do
         expect { response }.to raise_error(Salah::HTTP::NoLocationError)
       end
     end
   end
 
-  describe '.day' do
-    describe 'requesting prayers for a given date' do
+  describe ".day" do
+    describe "requesting prayers for a given date" do
       let(:date) { Date.civil 2021, 3, 21 }
-      let(:response) { Salah.day(date, city: 'Leiden') }
-      around {|ex| VCR.use_cassette('Salah.Day.City') { ex.run} }
+      let(:response) { Salah.day(date, city: "Leiden") }
+      around { |ex| VCR.use_cassette("Salah.Day.City") { ex.run } }
 
-      it 'returns prayers for the given date' do
-        response.prayers.each{|prayer| expect(prayer.date.to_date).to eq(date)}
+      it "returns prayers for the given date" do
+        response.prayers.each { |prayer| expect(prayer.date.to_date).to eq(date) }
       end
     end
   end

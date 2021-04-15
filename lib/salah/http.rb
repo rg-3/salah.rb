@@ -1,10 +1,10 @@
 class Salah::HTTP
-  require 'uri'
-  require 'net/http'
-  require 'json'
-  require_relative 'http/bad_response_error'
+  require "uri"
+  require "net/http"
+  require "json"
+  require_relative "http/bad_response_error"
 
-  BASE_URI = URI.parse('https://api.pray.zone/')
+  BASE_URI = URI.parse("https://api.pray.zone/")
   BadContentTypeError = Class.new(RuntimeError)
   NoLocationError = Class.new(RuntimeError)
 
@@ -60,20 +60,20 @@ class Salah::HTTP
   private
 
   def get(path, params)
-    params   = parse_params!(params)
+    params = parse_params!(params)
     response = http.request Net::HTTP::Get.new(join_path(path, params), default_headers)
     if Net::HTTPOK === response
-      parse_response(response, response['content-type'])
+      parse_response(response, response["content-type"])
     else
       raise BadResponseError.new("Bad response from API (#{response.class})", response)
     end
   end
 
   def parse_params!(params)
-    params.delete_if{|_, v| v.nil?}
-    params[:school]    = Integer(params[:school] ? params[:school] : Salah::School.find_by_name('Muslim World League'))
-    params[:juristic]  = Integer(params[:juristic]) if params[:juristic]
-    params[:latitude]  = params.delete(:lat) if params[:lat]
+    params.delete_if { |_, v| v.nil? }
+    params[:school] = Integer(params[:school] || Salah::School.find_by_name("Muslim World League"))
+    params[:juristic] = Integer(params[:juristic]) if params[:juristic]
+    params[:latitude] = params.delete(:lat) if params[:lat]
     params[:longitude] = params.delete(:lng) if params[:lng]
     return params if params[:city] || params[:ip]
     return params if params[:latitude] && params[:longitude]
@@ -81,7 +81,7 @@ class Salah::HTTP
   end
 
   def join_path(path, params)
-    [path, '?', URI.encode_www_form(params)].join
+    [path, "?", URI.encode_www_form(params)].join
   end
 
   def http
@@ -90,7 +90,7 @@ class Salah::HTTP
 
   def parse_response(res, content_type)
     case content_type
-    when 'application/json', 'application/json; charset=utf-8'
+    when "application/json", "application/json; charset=utf-8"
       Salah::Response.new res, OpenStruct.from_hash(JSON.parse(res.body))
     else
       raise BadContentTypeError.new("The content-type '#{content_type}' is not recognized")
@@ -98,6 +98,6 @@ class Salah::HTTP
   end
 
   def default_headers
-    {'User-Agent' => "salah.rb v#{Salah::VERSION}"}
+    {"User-Agent" => "salah.rb v#{Salah::VERSION}"}
   end
 end
