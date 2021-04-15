@@ -2,6 +2,8 @@
 
 ## next
 
+* Remove lock file from repo
+
 ## v1.2.0
 
 * Add rubygems-tasks
