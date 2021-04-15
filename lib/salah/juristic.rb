@@ -1,4 +1,4 @@
-class Salah::Juristic < Struct.new(:id, :name)
+Salah::Juristic = Struct.new(:id, :name) do
   def self.find_by_name(name)
     Salah.juristics.find { |juristic| juristic.name == name }
   end

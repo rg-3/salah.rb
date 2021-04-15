@@ -2,8 +2,15 @@
 
 ## next
 
+## v1.2.0
+
+* Add rubygems-tasks
+
+* Avoid Struct.new() inheritence to allow multiple reloads of
+  salah.rb files (eg with `Kernel#load`)
+
 * Add the Ruby Style Guide linter [standard](https://github.com/testdouble/standard)
-)
+
 * Add `Rakefile.rb`
 
 ## v1.1.0

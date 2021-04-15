@@ -1,4 +1,4 @@
-class Salah::Prayer < Struct.new(:name, :time, :date, :school, :location, :juristic)
+Salah::Prayer = Struct.new(:name, :time, :date, :school, :location, :juristic) do
   def fajr?
     name == "Fajr"
   end

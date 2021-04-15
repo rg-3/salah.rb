@@ -24,4 +24,5 @@ Gem::Specification.new do |g|
   g.add_development_dependency "webmock", "~> 3.12"
   g.add_development_dependency "yard", "~> 0.9"
   g.add_development_dependency "redcarpet", "~> 3.5"
+  g.add_development_dependency "rubygems-tasks", "~> 0.2"
 end
