@@ -2,8 +2,8 @@ $LOAD_PATH << "lib"
 require "salah/version"
 Gem::Specification.new do |g|
   g.name = "salah.rb"
-  g.homepage = "https://github.com/rg-3/salah.rb#readme"
-  g.authors	= ["rg"]
+  g.homepage = "https://github.com/0x1eef/salah.rb#readme"
+  g.authors	= ["0x1eef"]
   g.email = "1aab@protonmail.com"
   g.version = Salah::VERSION
 
